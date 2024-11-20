@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#" style="font-family: Helvetica; font-weight: bold;">ECOPARI</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Kontak Kami</a>
+
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-danger text-white" href="/logout">Logout</a>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="bg-white p-5" style="opacity: 0.9; border-radius: 10px; width: 80%;">
+            <h1 class="text-center" style="margin-bottom: 20px; font-family: Helvetica; font-weight: bold;">ECOPARI</h1>
+            <p class="text-center" style="margin-bottom: 40px; font-family: Helvetica; box-shadow: 0 4px 8px rgba(0, 0, 0, 1);">ECOPARI adalah sebuah platform yang didedikasikan untuk mendukung upaya konservasi lingkungan, khususnya terumbu karang dan mangrove. Melalui berbagai program dan inisiatifnya, ECOPARI mengajak masyarakat untuk bersama-sama menjaga ekosistem laut dan pesisir yang menjadi kunci keberlanjutan kehidupan. Dengan berfokus pada aksi nyata dan edukasi, platform ini bertujuan menciptakan dampak positif bagi lingkungan dan meningkatkan kesadaran akan pentingnya pelestarian alam untuk generasi mendatang.</p>
+            <div class="row text-center">
+                <div class="col-md-6 d-flex justify-content-center">
+                    <div class="card" style="background-color: white; border-radius: 10px; width: 80%;">
+                        <img src="/images/pexels-francesco-ungaro-3189106.jpg" alt="Terumbu Karang" class="card-img-top" style="border-radius: 5px; height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <p class="card-text">Pelajari lebih lanjut tentang konservasi terumbu karang.</p>
+                            <a href="/coral" class="btn btn-primary m-2">Terumbu Karang</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center">
+                    <div class="card" style="background-color: white; border-radius: 10px; width: 80%;">
+                        <img src="/images/pexels-icon0-726298.jpg" alt="Mangrove" class="card-img-top" style="border-radius: 5px; height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <p class="card-text">Pelajari lebih lanjut tentang konservasi mangrove.</p>
+                            <a href="/mangrove" class="btn btn-primary m-2">Mangrove</a>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </main>
+</body>
+</html>
