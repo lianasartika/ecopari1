@@ -9,8 +9,8 @@ const db = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
     password: '',
-    database: 'ecopari_db'
-    debug:false
+    database: 'ecopari_db',
+    debug: false
 });
 
 db.connect((err) => {
