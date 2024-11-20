@@ -3,42 +3,14 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const mysql = require('mysql');
 const app = express();
-
+const port = 3000;
 
 const db = mysql.createConnection({
-    host: '127.0.0.1',
+    host: 'localhost',
     user: 'root',
     password: '',
-    database: 'ecopari_db',
-    debug: false
+    database: 'ecopari_db'
 });
-
-const session = require("express-session");
-const redis = require("redis");
-const RedisStore = require("connect-redis").default;
-const redisClient = redis.createClient({
-    url: "redis://redis:6379",
-});
-
-redisClient.connect().catch(console.error);
-
-
-
-let redisStore = new RedisStore({
-    client: redisClient,
-});
-
-app.use(
-   session({
-     store: redisStore,
-     secret: "SESSION_SECRET",
-     resave: false,
-     saveUninitialized: false,
-     cookie: {
-       secure: false,
-    },
-  })
-);
 
 db.connect((err) => {
     if (err) throw err;
@@ -48,27 +20,6 @@ db.connect((err) => {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
-
-//-momery unleaked---------
-app.set('trust proxy', 1);
-
-app.use(session({
-cookie:{
-    secure: true,
-    maxAge:60000
-       },
-store: new RedisStore(),
-secret: 'secret',
-saveUninitialized: true,
-resave: false
-}));
-
-app.use(function(req,res,next){
-if(!req.session){
-    return next(new Error('Oh no')) //handle error
-}
-next() //otherwise continue
-});
 
 app.use(session({
     secret: 'secret',
@@ -150,5 +101,5 @@ app.get('/logout', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server running on port ${port} `);
+    console.log(`Server running on port ${port} http://localhost:3000`);
 });
