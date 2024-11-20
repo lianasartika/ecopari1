@@ -13,6 +13,33 @@ const db = mysql.createConnection({
     debug: false
 });
 
+const session = require("express-session");
+const redis = require("redis");
+const RedisStore = require("connect-redis").default;
+const redisClient = redis.createClient({
+    url: "redis://redis:6379",
+});
+
+redisClient.connect().catch(console.error);
+
+
+
+let redisStore = new RedisStore({
+    client: redisClient,
+});
+
+app.use(
+   session({
+     store: redisStore,
+     secret: "SESSION_SECRET",
+     resave: false,
+     saveUninitialized: false,
+     cookie: {
+       secure: false,
+    },
+  })
+);
+
 db.connect((err) => {
     if (err) throw err;
     console.log('Connected to database');
