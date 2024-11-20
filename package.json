@@ -1,5 +1,5 @@
 {
-  "name": "ecopari1",
+  "name": "",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -7,7 +7,7 @@
     "start": "node app.js"  },
     
   "keywords": [],
-  "author": "ecopari1",
+  "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
